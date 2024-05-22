@@ -1,0 +1,59 @@
+.more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 7.5rem;
+}
+
+.more h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.more p {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.more button {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.more button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .more h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .more h3 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .more h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .more h3 {
+    text-align: center;
+  }
+}
+
+#journey {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

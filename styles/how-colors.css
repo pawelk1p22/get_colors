@@ -1,0 +1,71 @@
+/* how to choose colors section styles */
+.how-colors {
+  display: flex;
+  margin-top: 10rem;
+}
+
+.how-colors h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+/* how to choose colors info styles */
+.how-colors-text {
+  flex-basis: 40%;
+}
+
+.how-colors-text p {
+  font-size: 1.3rem;
+}
+
+.spanH {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* how to choose colors steps styles */
+.how-colors-steps {
+  flex-basis: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 576px) {
+  .how-colors-text h3 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .how-colors-text h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .how-colors-text h3 {
+    font-size: 2.8rem;
+  }
+}
+
+/* grid structure */
+@media (max-width: 992px) {
+  .how-colors {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-colors-text {
+    text-align: center;
+  }
+
+  .how-colors-steps {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}

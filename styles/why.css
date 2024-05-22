@@ -1,0 +1,105 @@
+/* why section styles */
+.why {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6.5rem;
+}
+
+/* header styles */
+.why > h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+/* why cards container styles */
+.why > div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 6rem;
+}
+
+/* cards styles */
+.why > div > div {
+  flex-basis: 30%;
+  padding: 2.5rem;
+  border-radius: 1rem;
+}
+
+.why > div > div > h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-top: 0;
+}
+
+@media (max-width: 576px) {
+  .why > div {
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  .why h2 {
+    font-size: 2.2rem;
+  }
+
+  .why > div > div {
+    flex-basis: 100%;
+  }
+
+  .why > div > div h3 {
+    font-size: 1.4rem;
+  }
+
+  .opinions-text {
+    text-align: center;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .why > div {
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: center;
+  }
+
+  .why h2 {
+    font-size: 2.5rem;
+  }
+
+  .why > div > div {
+    flex-basis: 100%;
+  }
+
+  .why > div > div h3 {
+    font-size: 1.5rem;
+  }
+
+  .opinions-text {
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .why > div {
+    flex-wrap: wrap;
+  }
+
+  .why > div > div {
+    flex-basis: 33%;
+  }
+
+  .why > div > div h3 {
+    font-size: 1.6rem;
+  }
+
+  .opinions-text {
+    text-align: center;
+  }
+
+  .why h2 {
+    font-size: 2.8rem;
+  }
+}

@@ -1,0 +1,60 @@
+/* hero section styles */
+.hero {
+  display: flex;
+  margin-top: 6.5rem;
+}
+
+.hero p {
+  line-height: 2.25;
+}
+
+.hero button {
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.hero button:hover {
+  cursor: pointer;
+}
+
+.hero > div {
+  flex-basis: 50%;
+}
+
+#downloadButton {
+  padding: 1rem;
+}
+
+@media (max-width: 576px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+}

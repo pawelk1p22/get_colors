@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="easy tool for choosing colors for your website"
+    />
+    <title>Get colored | Home</title>
+
+    <style type="text/css">
+      @font-face {
+        font-family: "Poppins";
+        src: url("styles/Poppins-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Poppins";
+        src: url("styles/Poppins-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Poppins";
+        src: url("styles/Poppins-Regular.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      body {
+        margin: 0;
+        font-family: Poppins;
+        box-sizing: border-box;
+      }
+
+      #container {
+        margin: 0 auto 0 auto;
+        max-width: 1372px;
+      }
+
+      p {
+        line-height: 2.25;
+      }
+
+      section,
+      main {
+        padding: 0 1rem !important;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      nav {
+        background: transparent;
+        backdrop-filter: blur(5px);
+        border-bottom: 1px solid black;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+      }
+
+      #hamburger {
+        position: relative;
+        top: 1rem;
+        left: 1rem;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        display: none;
+        align-self: flex-start;
+      }
+
+      .bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin: 5px auto;
+        background-color: black;
+        transition: all 0.3s ease-in-out;
+      }
+
+      #nav-menu {
+        display: flex;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: auto;
+        gap: 2rem;
+        height: 60px;
+        overflow: visible;
+        transition: all 0.5s ease-in-out;
+        background: transparent;
+        backdrop-filter: blur(5px);
+        padding-left: 0;
+        margin-left: 1rem;
+      }
+
+      #nav-menu li {
+        display: inline-block;
+        height: 100%;
+        align-items: center;
+      }
+
+      #nav-menu a {
+        display: block;
+        padding: 15px 0;
+        text-decoration: none;
+        border-bottom: none;
+        color: black;
+      }
+
+      #nav-menu a:hover {
+        filter: brightness(200%);
+      }
+
+      @media only screen and (max-width: 576px) {
+        #hamburger {
+          display: block;
+        }
+
+        #nav-menu {
+          display: none;
+        }
+
+        #nav-menu.open {
+          display: flex;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          flex-direction: column;
+          margin-top: 1px;
+          gap: 0;
+        }
+
+        #nav-menu.open > * {
+          border-bottom: 1px solid black;
+          padding-left: 1rem;
+        }
+      }
+
+      #hamburger.open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      #hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      #hamburger.open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #nav-menu.open {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+    </style>
+    <link
+      rel="preload"
+      href="styles/hero.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/hero.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/hero.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/hero.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/why.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/why.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/how.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/how.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/opinions.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/opinions.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/faq.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/faq.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/contact.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/contact.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/how-colors.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/how-colors.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/more.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/more.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/footer.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/footer.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/toolbar.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/toolbar.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/savePopup.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/savePopup.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/table.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/table.css" />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="styles/a.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link rel="stylesheet" href="styles/a.css" />
+    </noscript>
+
+    <script src="scripts/hamburgerMenu.js" defer></script>
+    <script src="scripts/changeColors/main.js" defer></script>
+    <script src="scripts/saver/main.js" defer></script>
+    <script src="scripts/faq/main.js" defer></script>
+  </head>
+
+  <body class="backgroundItem">
+    <div id="container">
+      <div id="savePopup">
+        <label for="fileNameInput">Enter file name</label>
+        <input id="fileNameInput" type="text" placeholder="e.g. my_colors" />
+        <label for="formatInput">Format</label>
+        <select name="format" id="formatInput">
+          <option value="plain">Plain text</option>
+          <option value="css">CSS</option>
+          <option value="tcss">Tailwindcss</option>
+        </select>
+        <button id="confirmDownload">DOWNLOAD</button>
+      </div>
+      <section class="menu">
+        <div class="toolbar">
+          <div>
+            <label for="color-input-primary">Primary</label
+            ><input id="color-input-primary" type="color" />
+          </div>
+          <div>
+            <label for="color-input-secondary">Secondary</label>
+            <input id="color-input-secondary" type="color" />
+          </div>
+          <div>
+            <label for="color-input-text">Text</label>
+            <input id="color-input-text" type="color" />
+          </div>
+          <div>
+            <label for="color-input-background">Background</label>
+            <input id="color-input-background" type="color" />
+          </div>
+          <div>
+            <label for="color-input-accent">Accent</label>
+            <input id="color-input-accent" type="color" />
+          </div>
+          <div><button id="downloadButton">DOWNLOAD</button></div>
+        </div>
+      </section>
+
+      <nav>
+        <div id="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul id="nav-menu">
+          <li><a class="textItem" href="index.html">Home</a></li>
+          <li><a class="textItem" href="desktop.html">Desktop version</a></li>
+          <li><a class="textItem" href="docs.html">Docs</a></li>
+        </ul>
+      </nav>
+      <main>
+        <section class="hero">
+          <div class="hero-text">
+            <h1 class="textItem">Get colors<br />for your website!</h1>
+            <p class="textItem">
+              Test your colors or generate them and get instant result <br />
+              Use the Toolbar below to realize your choices.
+            </p>
+            <!-- <button>How this website works?</button> -->
+            <a href="#getStarted"
+              ><button class="primaryItem backgroundItem">
+                Get started
+              </button></a
+            >
+          </div>
+          <div class="hero-rectangles"></div>
+        </section>
+      </main>
+      <section class="why">
+        <h2 class="textItem">Why get colored?</h2>
+        <div>
+          <div class="interpolatedBackground">
+            <h3 class="textItem">It's realistic</h3>
+            <p class="textItem">
+              You can test your color palletes on real website
+            </p>
+          </div>
+          <div class="interpolatedBackground">
+            <h3 class="textItem">It's simple</h3>
+            <p class="textItem">
+              It's very easy to use this tool, just a few buttons
+            </p>
+          </div>
+          <div class="interpolatedBackground">
+            <h3 class="textItem">It's free</h3>
+            <p class="textItem">This tool is completely free and open source</p>
+          </div>
+        </div>
+      </section>
+      <section class="how">
+        <div>
+          <h3 class="textItem">How does it work?</h3>
+          <p class="textItem">Find out how it works</p>
+        </div>
+        <div>
+          <p class="textItem">
+            It's a website written in html, css and javascript. Html for
+            structure, css for styling and javascript for interactivity. This
+            tool is open source so you can freely edit it to your needs.
+          </p>
+        </div>
+      </section>
+      <section class="opinions">
+        <div class="opinions-text">
+          <h3 class="textItem">Opinions</h3>
+          <p class="textItem">
+            What (imaginary) people are saying about this site.
+          </p>
+        </div>
+        <div class="opinions-container">
+          <div class="opinion interpolatedBackgroundSecondary">
+            <div class="user">
+              <div class="img textItem"></div>
+              <!-- <img src="" alt="avatar" /> -->
+              <div class="user-info">
+                <p class="textItem">John Doe</p>
+                <p class="textItem darkerText">Developer</p>
+              </div>
+            </div>
+            <div class="rating textItem">
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="textItem">
+              It's amazing how a simple change in color can completely transform
+              a design!
+            </div>
+          </div>
+
+          <div class="opinion interpolatedBackgroundSecondary">
+            <div class="user">
+              <div class="img textItem"></div>
+              <!-- <img src="" alt="avatar" /> -->
+              <div class="user-info">
+                <p class="textItem">John Doe</p>
+                <p class="textItem darkerText">Developer</p>
+              </div>
+            </div>
+            <div class="rating textItem">
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="textItem">
+              Finding the right color scheme has never been easier, thanks to
+              this site!
+            </div>
+          </div>
+
+          <div class="opinion interpolatedBackgroundSecondary">
+            <div class="user">
+              <div class="img textItem"></div>
+              <!-- <img src="" alt="avatar" /> -->
+              <div class="user-info">
+                <p class="textItem">John Doe</p>
+                <p class="textItem darkerText">Developer</p>
+              </div>
+            </div>
+            <div class="rating textItem">
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="icon-star"
+                  class="w-6 h-6"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    class="star-color-path"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="textItem">
+              I love how I can easily visualize different color combinations
+              before making a decision.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="getStarted" class="how-colors">
+        <div class="how-colors-text">
+          <h3 class="textItem">How to choose colors?</h3>
+          <p class="textItem">
+            Learn how to get your color palette in 4 steps.
+          </p>
+        </div>
+        <div class="how-colors-steps">
+          <div>
+            <p class="textItem">
+              <span class="accentItem spanH">1&nbsp;</span>Start with 2 neutral
+              colors for the text and the background
+            </p>
+          </div>
+          <div>
+            <p class="textItem">
+              <span class="accentItem spanH">2&nbsp;</span>Choose your primary
+              and secondary colors. Primary is for main CTAs and sections, and
+              Secondary is for less important buttons and info cards.
+            </p>
+          </div>
+          <div>
+            <p class="textItem">
+              <span class="accentItem spanH">3&nbsp;</span>Accent color is an
+              additional color. It can appear in images, highlights, hyperlinks,
+              boxes, cards, etc.
+            </p>
+          </div>
+          <div>
+            <p class="textItem">
+              <span class="accentItem spanH">4&nbsp;</span>Happy with the
+              results? Press on “Export” and have fun with your color palette!
+            </p>
+          </div>
+        </div>
+        <div></div>
+      </section>
+      <section class="faq">
+        <div class="faq-text">
+          <h3 class="textItem">FAQ</h3>
+          <p class="textItem">Get answers to popular questions.</p>
+        </div>
+        <div class="faq-questions">
+          <div class="faq-item interpolatedBackgroundSecondary">
+            <div class="faq-question">
+              <p class="textItem">Is it free?</p>
+              <div class="cross-icon accentItem"></div>
+            </div>
+
+            <div class="faq-answer">
+              <p class="textItem">Yes, it's free.</p>
+            </div>
+          </div>
+          <div class="faq-item interpolatedBackgroundSecondary">
+            <div class="faq-question">
+              <p class="textItem">Is it open-source</p>
+              <div class="cross-icon accentItem"></div>
+            </div>
+
+            <div class="faq-answer">
+              <p class="textItem">
+                Yes, it's open-source. You can edit it freely.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item interpolatedBackgroundSecondary">
+            <div class="faq-question">
+              <p class="textItem">How does it work?</p>
+              <div class="cross-icon accentItem"></div>
+            </div>
+
+            <div class="faq-answer">
+              <p class="textItem">
+                It's a website written in HTML, CSS and vanilla Javascript
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="more">
+        <h3 class="textItem">
+          Hey, your <span id="journey">journey</span> don't have to end here.
+        </h3>
+        <p class="textItem">Check out other tools</p>
+        <button class="primaryItem backgroundItem">Go</button>
+      </section>
+      <section id="contact" class="contact">
+        <form action="#">
+          <div>
+            <label class="textItem" for="nameInput">Name</label>
+            <input class="textItem" id="nameInput" type="text" />
+          </div>
+          <div>
+            <label class="textItem" for="emailInput">Email</label>
+            <input class="textItem" id="emailInput" type="email" />
+          </div>
+          <div>
+            <label class="textItem" for="messageInput">Message</label>
+            <input class="textItem" id="messageInput" type="text" />
+          </div>
+          <button class="secondaryItem" type="submit">Submit</button>
+        </form>
+        <div class="contact-form-text">
+          <h4 class="textItem">Contact with me!</h4>
+          <p class="textItem">
+            If you have any questions I will be happy to answer them!
+          </p>
+        </div>
+      </section>
+      <footer>
+        <div class="footer-logo-row"><img src="" alt="logo" /></div>
+        <div class="footer-columns">
+          <div class="footer-text textItem">Get colors for your website!</div>
+          <div>
+            <h5 class="textItem">EXPLORE</h5>
+            <a class="textItem" href="https://en.wikipedia.org/wiki/HTML">
+              <p>HTML</p>
+            </a>
+            <a class="textItem" href="https://en.wikipedia.org/wiki/CSS">
+              <p>CSS</p>
+            </a>
+            <a class="textItem" href="https://en.wikipedia.org/wiki/JavaScript">
+              <p>JAVASCRIPT</p>
+            </a>
+          </div>
+          <div>
+            <h5 class="textItem">KEEP IN TOUCH</h5>
+            <a href="#contact"><p class="textItem">Contact form</p></a>
+            <a href="https://github.com"> <p class="textItem">Github</p></a>
+            <a href="https://youtube.com"> <p class="textItem">Youtube</p></a>
+            <a href="https://codepen.io"> <p class="textItem">CodePen</p></a>
+          </div>
+        </div>
+        <p class="copyright">Copyright &copy; 2024 Paweł Kusznieruk</p>
+      </footer>
+    </div>
+  </body>
+</html>
